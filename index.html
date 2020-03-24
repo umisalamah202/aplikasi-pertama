@@ -5,7 +5,8 @@
     <meta http-equiv='X-UA-Compatible' content='IE=edge'>
     <title>Page Title</title>
     <meta name='viewport' content='width=device-width, initial-scale=1'>
-    <link rel='stylesheet' type='text/css' media='screen' href='main.css'>
+    <link rel='stylesheet' type='text/css' media='screen' href='assets/bootstrap/css/bootstrap.css'>
+    <link rel='stylesheet' type='text/css' media='screen' href='assets/bootstrap/css/style.css'>
     <script src='main.js'></script>
 </head>
 <body>
@@ -14,5 +15,221 @@
     <p>Yea aku terharu sekali bisa menambah code ini</p>
     <br>
     <p>Aku seorang web developer keren di abad ini</p>
+
+    <div class="container">
+        <div class="card mt-3"> 
+          <div class="row no-gutters">
+        <!--      <div class="col-md-12"> -->
+              <div class="col-md-3">
+               <img src="https://images.assetsdelivery.com/compings_v2/alexwhite/alexwhite1804/alexwhite180400291.jpg" class="rounded-circle" height="200pt" width="200pt" alt="...">
+              </div>
+              <div class="col-md-9">
+                 <div class="card-body">
+                      <p class="card-text" style="font-size: 14pt; margin-bottom: 0px; font-family: 'Times New Roman', Times, serif;">Nama : Umi Salamah</p>
+                     <p class="card-text" style="font-size: 14pt; margin-bottom: 0px; font-family: 'Times New Roman', Times, serif;">NIM : 201701079</p>
+                     <p class="card-text" style="font-size: 14pt; margin-bottom: 0px; font-family: 'Times New Roman', Times, serif;">Email: umis0179@gmail.com</p>
+                     <p class="card-text" style="font-size: 14pt; margin-bottom: 0px; font-family: 'Times New Roman', Times, serif;">Phone :08584884604</p>
+                     <p class="card-text" style="font-size: 14pt; margin-bottom: 0px; font-family: 'Times New Roman', Times, serif;">Alamat : JL Pahlawan No 35Kebumen</p>
+        
+                    </div>
+              </div>
+        <!--      </div> -->
+          </div>
+        </div>
+        <div class="card mt-3"> 
+          <div class="row no-gutters">
+        <!--      <div class="col-md-12"> -->
+              <div class="col-md-4 border border-primary">
+                  <div class="card-body">
+                      <p class="card-text text-center" style="font-size: 15pt; margin-bottom: 0px; font-family: 'Times New Roman', Times, serif;">Nilai Rata Rata Ujian</p>
+                    <div class="row">
+                      <div class="col-md-6">
+                        <div id="nilai_tertulis"></div>
+                      </div>
+                      <div class="col-md-6">
+                         <div id="nilai_praktek"></div>
+                      </div>
+                    </div>
+                  </div>
+              </div>
+              <div class="col-md-4 border border-primary">
+                 <div class="card-body">
+                      <p class="card-text text-center" style="font-size: 15pt; margin-bottom: 0px; font-family: 'Times New Roman', Times, serif;">Skor Toefl</p>
+                     <div class="row">
+                      <div class="col-md-12">
+                        <div id="nilai_toefl" class="text-center" style="font-size: 20pt; font-family: 'Times New Roman', Times, serif;"></div>
+                      </div>
+                       <div class="col-md-12">
+                        <div id="na_toefl" class="text-center" style="font-size: 10pt; font-family: 'Times New Roman', Times, serif;"></div>
+                      </div>
+                    </div>
+                  </div>
+              </div>
+            <div class="col-md-4 border border-primary">
+                 <div class="card-body">
+                      <p class="card-text text-center" style="font-size: 15pt; margin-bottom: 0px; font-family: 'Times New Roman', Times, serif;">Status Beasiswa</p>
+                       <div class="row">
+                      <div class="col-md-12">
+                        <div id="status_beasiswa" class="text-center" style="font-size: 10pt; font-family: 'Times New Roman', Times, serif;"></div>
+                      </div>
+                       <div class="col-md-12">
+                        <div id="na_avg" class="text-center" style="font-size: 10pt; font-family: 'Times New Roman', Times, serif;"></div>
+                      </div>
+                    </div>
+                  </div>
+              </div>
+        <!--      </div> -->
+          </div>
+        </div>
+      </div>
+      
+      <script>
+          var nilai = document.getElementById("nilai");
+var toefl = document.getElementById("toefl");
+var nilai_tertulis = document.getElementById("nilai_tertulis");
+var nilai_praktek = document.getElementById("nilai_praktek");
+var nilai_toefl = document.getElementById("nilai_toefl");
+var na_toefl = document.getElementById("na_toefl");
+var status_beasiswa = document.getElementById("status_beasiswa");
+var na_avg = document.getElementById("na_avg");
+
+var nilai_ujian_tertulis_1 =
+    prompt("Masukkan Nilai Ujian Tertulis 1");
+var nilai_ujian_tertulis_2 =
+    prompt("Masukkan Nilai Ujian Tertulis 2");
+var nilai_ujian_praktek = 
+    prompt("Masukkan Nilai Ujian Praktek");
+var nilai_ujian_toefl =
+    prompt("Masukkan Nilai Ujian Toefl");
+
+var avg_nilai_ujian = (nilai_ujian_tertulis_1 + nilai_ujian_tertulis_2 + nilai_ujian_praktek) / 3 
+
+var nilai_akhir_toefl = 0
+var v_nilai_tertulis = (nilai_ujian_tertulis_1+ nilai_ujian_tertulis_2)/2
+var v_nilai_praktek = nilai_ujian_praktek
+
+if (avg_nilai_ujian > 90) {
+  nilai_tertulis.innerHTML = "Nilai Tertulis " +v_nilai_tertulis
+  nilai_praktek.innerHTML = "Nilai Praktek " + v_nilai_praktek
+  status_beasiswa.innerHTML="LULUS BEASISWA"
+  na_avg.innnerHTML= avg_nilai_ujian
+}
+else {
+  status_beasiswa.innerHTML="TIDAK LULUS BEASISWA"
+    na_avg.innnerHTML= avg_nilai_ujian
+}
+
+if (nilai_ujian_toefl > 500){
+  nilai_toefl.innerHTML = nilai_ujian_toefl
+  na_toefl.innerHTML = 'Nilai 100'
+
+}
+else if(nilai_ujian_toefl <= 500 && nilai_ujian_toefl>=450){
+  nilai_toefl.innerHTML = nilai_ujian_toefl
+  na_toefl.innerHTML = 'Nilai 85'
+}
+else if(nilai_ujian_toefl <450){
+  nilai_toefl.innerHTML = nilai_ujian_toefl
+  na_toefl.innerHTML = 'Nilai 50'
+}
+
+//<![CDATA[
+var Background=new Array;Background[0]="#f5f5f5 url('https://cdn.pixabay.com/photo/2017/08/30/01/05/milky-way-2695569_960_720.jpg') no-repeat top center fixed",Background[1]="#f5f5f5 url('https://1.bp.blogspot.com/-biufA2HFHVo/W-uPLiIpZWI/AAAAAAAAHLU/nuhIkdEHXvchsvdyp_4uacDBaNIkH2VCgCLcBGAs/s320/background%2B2.jpg') no-repeat top center fixed",Background[2]="#f5f5f5 url('https://1.bp.blogspot.com/-Af-oe9q1kQo/W-uPLx2qlFI/AAAAAAAAHLc/DkZPwegM51wP1lRhE3nX3JWUnmZbuGp0wCLcBGAs/s320/background%2B3.jpg') no-repeat top center fixed",Background[3]="#f5f5f5 url('https://1.bp.blogspot.com/-Xg-yRiuI7ns/W-uPNRZwxzI/AAAAAAAAHLg/NZnhxDs2B7kN3Umy5h8OJvMZi0Qu3E-vwCLcBGAs/s320/background%2B4.jpg') no-repeat top center fixed";var random=Math.floor(4*Math.random());document.write("<style>"),document.write("body {"),document.write("background: "+Background[random]+";"),document.write("background-size:100%;"),document.write(" }"),document.write("</style>");
+//]]>
+function refreshPage() {
+  window.location.href = window.location.href;
+}
+
+
+            /**************
+            * Snow Effect Script- By Altan d.o.o. (http://www.altan.hr/snow/index.html)
+            * Visit Dynamic Drive DHTML code library (http://www.dynamicdrive.com/) for full source code
+            * Last updated Nov 9th, 05 by DD. This notice must stay intact for use
+            **************/
+              
+              //Configure below to change URL path to the snow image
+              var snowsrc="https://media.tenor.com/images/0887968881b2ea5483238499c08fe39e/tenor.gif";
+              // Configure below to change number of snow to render
+              var no = 20;
+              // Configure whether snow should disappear after x seconds (0=never):
+              var hidesnowtime = "0";
+              // Configure how much snow should drop down before fading ("windowheight" or "pageheight")
+              var snowdistance = "pageheight";
+            
+            ///////////Stop Config//////////////////////////////////
+            
+              var ie4up = (document.all) ? 1 : 0;
+              var ns6up = (document.getElementById&&!document.all) ? 1 : 0;
+            
+                function iecompattest(){
+                return (document.compatMode && document.compatMode!="BackCompat")? document.documentElement : document.body
+                }
+            
+              var dx, xp, yp;    // coordinate and position variables
+              var am, stx, sty;  // amplitude and step variables
+              var i, doc_width = 800, doc_height = 400; 
+              
+              if (ns6up) {
+                doc_width = self.innerWidth;
+                doc_height = self.innerHeight;
+              } else if (ie4up) {
+                doc_width = iecompattest().clientWidth;
+                doc_height = iecompattest().clientHeight;
+              }
+            
+              dx = new Array();
+              xp = new Array();
+              yp = new Array();
+              am = new Array();
+              stx = new Array();
+              sty = new Array();
+              snowsrc=(snowsrc.indexOf("dynamicdrive.com")!=-1)? "snow.gif" : snowsrc
+              for (i = 0; i < no; ++ i) {  
+                dx[i] = 0;                        // set coordinate variables
+                xp[i] = Math.random()*(doc_width-50);  // set position variables
+                yp[i] = Math.random()*doc_height;
+                am[i] = Math.random()*20;         // set amplitude variables
+                stx[i] = 0.02 + Math.random()/10; // set step variables
+                sty[i] = 0.7 + Math.random();     // set step variables
+                    if (ie4up||ns6up) {
+                  if (i == 0) {
+                    document.write("<div id=\"dot"+ i +"\" style=\"POSITION: absolute; Z-INDEX: "+ i +"; VISIBILITY: visible; TOP: 15px; LEFT: 15px;\"><a href=\"http://wpplugins.info\"><img src="+snowsrc+" border=\"0\"><\/a><\/div>");
+                  } else {
+                    document.write("<div id=\"dot"+ i +"\" style=\"POSITION: absolute; Z-INDEX: "+ i +"; VISIBILITY: visible; TOP: 15px; LEFT: 15px;\"><img src="+snowsrc+" border=\"0\"><\/div>");
+                  }
+                }
+              }
+            
+              function snowIE_NS6() {  // IE and NS6 main animation function
+                doc_width = ns6up?window.innerWidth-10 : iecompattest().clientWidth-10;
+                    doc_height=(window.innerHeight && snowdistance=="windowheight")? window.innerHeight : (ie4up && snowdistance=="windowheight")?  iecompattest().clientHeight : (ie4up && !window.opera && snowdistance=="pageheight")? iecompattest().scrollHeight : iecompattest().offsetHeight;
+                for (i = 0; i < no; ++ i) {  // iterate for every dot
+                  yp[i] += sty[i];
+                  if (yp[i] > doc_height-50) {
+                    xp[i] = Math.random()*(doc_width-am[i]-30);
+                    yp[i] = 0;
+                    stx[i] = 0.02 + Math.random()/10;
+                    sty[i] = 0.7 + Math.random();
+                  }
+                  dx[i] += stx[i];
+                  document.getElementById("dot"+i).style.top=yp[i]+"px";
+                  document.getElementById("dot"+i).style.left=xp[i] + am[i]*Math.sin(dx[i])+"px";  
+                }
+                snowtimer=setTimeout("snowIE_NS6()", 10);
+              }
+            
+                function hidesnow(){
+                    if (window.snowtimer) clearTimeout(snowtimer)
+                    for (i=0; i<no; i++) document.getElementById("dot"+i).style.visibility="hidden"
+                }
+                    
+            
+            if (ie4up||ns6up){
+                snowIE_NS6();
+                    if (hidesnowtime>0)
+                    setTimeout("hidesnow()", hidesnowtime*1000)
+                    }
+      </script>
+    
 </body>
 </html>
